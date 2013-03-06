@@ -213,7 +213,7 @@ def parseSentences(filename, dicfile):
 		#m1new = h1fw
 		#m2new = h2fw
 		epsilon = 0.00001
-		if (len(m1l) > 7):
+		if (len(refl) > 7):
 			if (cpscore == 4 or cpscore == 3):
 				outfile.write('-1\n')
 			elif(cpscore == 2):
