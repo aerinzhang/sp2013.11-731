@@ -212,23 +212,28 @@ def parseSentences(filename, dicfile):
 		cpscore = compareLists(m1list, m2list)
 		#m1new = h1fw
 		#m2new = h2fw
-		if (cpscore == 4 or cpscore == 3):
-			outfile.write('-1\n')
-		elif(cpscore == 2):
-			if m1new > m2new :
+		epsilon = 0.00001
+		if (len(m1l) > 7):
+			if (cpscore == 4 or cpscore == 3):
 				outfile.write('-1\n')
-			elif m1new == m2new:
-				outfile.write('0\n')
+			elif(cpscore == 2):
+				if (m1new - m2new) > epsilon :
+					outfile.write('-1\n')
+				elif (m1new - m2new) < -epsilon:
+					outfile.write('1\n')
+				else:
+					outfile.write('0\n')
 			else:
 				outfile.write('1\n')
-		else:
-			outfile.write('1\n')
 		#if m1new > m2new :
 		#	outfile.write('-1\n')
 		#elif m1new == m2new:
 		#	outfile.write('0\n')
 		#else:
 		#	outfile.write('1\n')
+		else:
+			outfile.write('0\n')
+								
 	outfile.close()
 	return 42
 
