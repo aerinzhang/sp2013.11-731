@@ -212,8 +212,8 @@ def parseSentences(filename, dicfile):
 		cpscore = compareLists(m1list, m2list)
 		#m1new = h1fw
 		#m2new = h2fw
-		epsilon = 0.00001
-		if (len(refl) > 7):
+		epsilon = 0.001
+		if (len(refl) > 1000):
 			if (cpscore == 4 or cpscore == 3):
 				outfile.write('-1\n')
 			elif(cpscore == 2):
