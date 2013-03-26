@@ -3,5 +3,5 @@ name:
    first: Shikun
    last: Zhang
 email: shikunz@cs.cmu.edu
-leaderboard: AerinZ
+leaderboard: hazelnut
 languages: [eng,zh]
