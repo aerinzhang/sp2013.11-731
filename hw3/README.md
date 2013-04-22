@@ -1,18 +1,3 @@
-There are three Python programs here (`-h` for usage):
-
- - `./decode` a simple non-reordering (monotone) phrase-based decoder
- - `./grade` computes the model score of your output
-
-The commands are designed to work in a pipeline. For instance, this is a valid invocation:
-
-    ./decode | ./grade
-
-
-The `data/` directory contains the input set to be decoded and the models
-
- - `data/input` is the input text
-
- - `data/lm` is the ARPA-format 3-gram language model
-
- - `data/tm` is the phrase translation model
+so basically all I did was implement a stack-based decoder that keeps track all i translated words in the ith stack by modifying the given decoder.
+I tuned a little and adjusted the code for better performance.
 
