@@ -12,6 +12,10 @@ weights = {'p(e)'       : float(opts.lm) ,
            'p(e|f)'     : float(opts.tm1),
            'p_lex(f|e)' : float(opts.tm2)}
 
+#filter the sources 
+#
+#
+
 all_hyps = [pair.split(' ||| ') for pair in open(opts.input)]
 num_sents = len(all_hyps) / 100
 for s in xrange(0, num_sents):

@@ -47,7 +47,7 @@ TMPF=/tmp/tmp.$$
 SCOREF=/tmp/scoref.$$
 echo Reading hypothesis from STDIN... 1>&2
 cat > $TMPF
-LINES=`wc -l $TMPF | cut -f1 -d ' '`
+LINES=`wc -l $TMPF | awk '{print $1}'`
 
 if [ $LINES -eq 800 ]; then
   # change head to tail to score the blind test set #####
