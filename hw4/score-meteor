@@ -49,10 +49,10 @@ echo Reading hypothesis from STDIN... 1>&2
 cat > $TMPF
 LINES=`wc -l $TMPF | awk '{print $1}'`
 
-if [ $LINES -eq 800 ]; then
+if [ $LINES -eq 400 ]; then
   # change head to tail to score the blind test set #####
   head -400 $TMPF > $SCOREF
-  $JAVA -Xmx1G -jar $METEOR_JAR $SCOREF $DIR/data/test.ref
+  $JAVA -Xmx1G -jar $METEOR_JAR $SCOREF $DIR/data/dev.ref
   rm -f $TMPF $SCORF
 else
   echo Exepected 800 lines but got $LINES 1>&2
